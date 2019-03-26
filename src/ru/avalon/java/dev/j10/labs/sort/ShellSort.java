@@ -20,9 +20,20 @@ public class ShellSort implements Sort {
     /**
      * {@inheritDoc}
      */
+    private Sort selectionSort = new SelectionSort();
+
+    
     public void sort(int[] array) {
         /*
          * TODO(Студент): Реализовать метод sort класса ShellSort
          */
+        int d = array.length / 2; // разбивка массива на промежутки
+        while(d >= 1) {
+            for (int i = 0; i < d; i++) {
+                selectionSort.sort(array);
+            }
+            d /= 2;
+        }
     }
+    
 }

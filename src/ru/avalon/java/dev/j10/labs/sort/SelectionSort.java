@@ -21,5 +21,20 @@ public class SelectionSort implements Sort {
         /*
          * TODO(Студент): Реализовать метод sort класса SelectionSort
          */
+        
+        int var; // переменная - буфер обмена для перестановки элементов массива местами
+        
+        for (int i = 0; i < array.length; i++) {
+            int k = i;
+            for (int j = i + 1; j < array.length; j++) {
+                if(array[j] < array[k]) {
+                    k = j;
+                }
+            }
+            var = array[i];
+            array[i] = array[k];
+            array[k] = var;
+        }
     }
+
 }
